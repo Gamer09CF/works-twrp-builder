@@ -1,0 +1,11 @@
+name: TEST
+
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Display Run Parameters
+      run: |
