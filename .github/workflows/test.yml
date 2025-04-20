@@ -1,5 +1,12 @@
 name: TEST
 
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: 'test and run!'
+        required: false
+        
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
@@ -8,4 +15,4 @@ jobs:
       contents: write
     steps:
     - name: Display Run Parameters
-      run: |
+      run: | ls
